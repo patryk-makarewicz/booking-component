@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
   *, *::before, *::after {
     box-sizing: border-box;
@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-size: 16px;
-    font-family: 'Roboto', sans-serif;;
+    font-family: 'Poppins', sans-serif;
     background-color: white;
     color: black;
     margin: 0;
