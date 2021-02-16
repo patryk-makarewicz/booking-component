@@ -2,7 +2,7 @@
 
 # General info
 
-This is my template for create-react-app with eslint, prettier, husky, netlify.
+IN CONSTRUCTION - This will be quick booking a hotel stay app.
 
 ## Getting Started with Create React App
 
