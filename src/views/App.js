@@ -5,6 +5,7 @@ import GlobalStyle from 'theme/GlobalStyle';
 import './App.scss';
 import ButtonSubmit from '../components/Buttons/Submit';
 import ButtonReady from '../components/Buttons/Ready';
+import ButtonArrow from '../components/Buttons/Arrow';
 
 const App = () => (
   <>
@@ -13,6 +14,8 @@ const App = () => (
       <header className="app__header">Booking app</header>
       <ButtonSubmit>Submit</ButtonSubmit>
       <ButtonReady>Ready</ButtonReady>
+      <ButtonArrow />
+      <ButtonArrow secondary />
     </div>
   </>
 );

@@ -17,6 +17,7 @@ const Button = styled.button`
   font-weight: 600;
   font-size: 14px;
   line-height: 21px;
+  cursor: pointer;
 
   &:hover {
     background: rgba(255, 104, 102, 0.8);
