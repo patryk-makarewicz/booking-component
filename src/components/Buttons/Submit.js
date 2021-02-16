@@ -13,10 +13,6 @@ const Button = styled.button`
   border: 1px solid #dd4747;
   box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.15);
   border-radius: 2px;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 21px;
   cursor: pointer;
 
   &:hover {
@@ -42,6 +38,10 @@ const Children = styled.p`
   text-align: center;
   color: #ffffff;
   width: 224px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
 `;
 
 const ButtonSubmit = ({ children }) => (

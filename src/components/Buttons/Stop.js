@@ -1,16 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import ArrowDown from '../../assets/arrowDown.svg';
-import ArrowUp from '../../assets/arrowUp.svg';
+import ArrowDownGray from '../../assets/arrowDownGray.svg';
+import ArrowUpGray from '../../assets/arrowUpGray.svg';
 
 const Button = styled.button`
   outline-style: none;
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: #ffffff;
-  border: 0.5px solid #e6eaed;
+  background: #e6eaed;
+  border: 0.5px solid rgba(187, 197, 202, 0.6);
   box-sizing: border-box;
   box-shadow: 0px 1.76139px 4.69705px rgba(0, 0, 0, 0.15);
   cursor: pointer;
@@ -25,18 +25,19 @@ const Button = styled.button`
 `;
 
 const Arrow = styled.img`
+  color: #bbc5ca;
   width: 17px;
   height: 10px;
 `;
 
-const ButtonArrow = ({ secondary }) => (
+const ButtonStop = ({ secondary }) => (
   <Button type="button">
     {secondary === true ? (
-      <Arrow src={ArrowUp} alt="Arrow up" />
+      <Arrow src={ArrowUpGray} alt="Arrow up" />
     ) : (
-      <Arrow src={ArrowDown} alt="Arrow down" />
+      <Arrow src={ArrowDownGray} alt="Arrow down" />
     )}
   </Button>
 );
 
-export default ButtonArrow;
+export default ButtonStop;

@@ -1,9 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import ArrowDown from '../../assets/arrowDown.svg';
-import ArrowUp from '../../assets/arrowUp.svg';
-
 const Button = styled.button`
   outline-style: none;
   width: 32px;
@@ -24,19 +21,31 @@ const Button = styled.button`
   }
 `;
 
-const Arrow = styled.img`
+const LineX = styled.div`
+  position: relative;
+  left: 7px;
+  top: 1px;
   width: 17px;
-  height: 10px;
+  height: 2px;
+  background-color: #ff6866;
+  transform: rotate(45deg);
 `;
 
-const ButtonArrow = ({ secondary }) => (
+const LineY = styled.div`
+  position: relative;
+  left: 6px;
+  bottom: 1px;
+  width: 17px;
+  height: 2px;
+  background-color: #ff6866;
+  transform: rotate(-45deg);
+`;
+
+const ButtonClose = () => (
   <Button type="button">
-    {secondary === true ? (
-      <Arrow src={ArrowUp} alt="Arrow up" />
-    ) : (
-      <Arrow src={ArrowDown} alt="Arrow down" />
-    )}
+    <LineX />
+    <LineY />
   </Button>
 );
 
-export default ButtonArrow;
+export default ButtonClose;
