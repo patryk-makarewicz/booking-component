@@ -13,15 +13,6 @@ const Button = styled.button`
   border: 0.5px solid rgba(187, 197, 202, 0.6);
   box-sizing: border-box;
   box-shadow: 0px 1.76139px 4.69705px rgba(0, 0, 0, 0.15);
-  cursor: pointer;
-
-  &:hover {
-    opacity: 0.7;
-  }
-
-  &:active {
-    opacity: 1;
-  }
 `;
 
 const Arrow = styled.img`
