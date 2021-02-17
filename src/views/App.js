@@ -8,12 +8,12 @@ import ButtonReady from '../components/Buttons/Ready';
 import ButtonArrow from '../components/Buttons/Arrow';
 import ButtonClose from '../components/Buttons/Close';
 import ButtonStop from '../components/Buttons/Stop';
+import Rooms from '../components/Rooms/Rooms';
 
 const App = () => (
   <>
     <GlobalStyle />
     <div className="app">
-      <header className="app__header">Booking app</header>
       <ButtonSubmit>Submit</ButtonSubmit>
       <ButtonReady>Ready</ButtonReady>
       <ButtonArrow />
@@ -21,6 +21,7 @@ const App = () => (
       <ButtonClose />
       <ButtonStop />
       <ButtonStop secondary />
+      <Rooms />
     </div>
   </>
 );
