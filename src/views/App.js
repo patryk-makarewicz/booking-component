@@ -17,6 +17,7 @@ const App = () => (
     <GlobalStyle />
     <div className="app">
       <ButtonSubmit>Submit</ButtonSubmit>
+      <ButtonSubmit secondary>Submit</ButtonSubmit>
       <ButtonReady>Ready</ButtonReady>
       <ButtonArrow />
       <ButtonArrow secondary />

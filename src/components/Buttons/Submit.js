@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import LoupeImage from '../../assets/loupe.svg';
+import OkImage from '../../assets/ok.svg';
 
 const Button = styled.button`
   outline-style: none;
@@ -26,7 +27,7 @@ const Button = styled.button`
   }
 `;
 
-const Loupe = styled.img`
+const Icon = styled.img`
   position: relative;
   width: 22px;
   height: 22px;
@@ -44,9 +45,10 @@ const Children = styled.p`
   line-height: 21px;
 `;
 
-const ButtonSubmit = ({ children }) => (
+const ButtonSubmit = ({ children, secondary }) => (
   <Button type="submit">
-    <Loupe src={LoupeImage} alt="Loupe" />
+    {secondary === true ? <Icon src={OkImage} alt="Ok" /> : <Icon src={LoupeImage} alt="Loupe" />}
+
     <Children>{children}</Children>
   </Button>
 );
