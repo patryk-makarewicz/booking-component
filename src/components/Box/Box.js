@@ -5,23 +5,16 @@ import TangleImage from '../../assets/tangle.png';
 import ButtonArrow from '../Buttons/Arrow';
 import ButtonAddRoom from '../Buttons/AddRoom';
 import ButtonReady from '../Buttons/Ready';
+import ButtonClose from '../Buttons/Close';
 
-const Wrapper = styled.div`
-  width: 303px;
-  height: 315px;
-  background: #ffffff;
-  box-shadow: 0px 6px 12px rgba(34, 68, 90, 0.25);
-  border-radius: 2px;
-  padding: 25px;
-`;
-
-const Tangle = styled.img`
-  position: relative;
-  left: 230px;
-  top: 4px;
+const Header = styled.header`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 `;
 
 const Room = styled.p`
+  width: 60px;
   font-style: normal;
   font-weight: 700;
   font-size: 15px;
@@ -59,11 +52,29 @@ const Span = styled.span`
   font-weight: 400;
 `;
 
+const Tangle = styled.img`
+  position: relative;
+  left: 230px;
+  top: 4px;
+`;
+
+const Wrapper = styled.div`
+  width: 303px;
+  height: 315px;
+  background: #ffffff;
+  box-shadow: 0px 6px 12px rgba(34, 68, 90, 0.25);
+  border-radius: 2px;
+  padding: 25px;
+`;
+
 const Box = () => (
   <>
     <Tangle src={TangleImage} alt="Tangle" />
     <Wrapper>
-      <Room>Room 1</Room>
+      <Header>
+        <Room>Room 1</Room>
+        <ButtonClose />
+      </Header>
       <RoomDetails>
         Adults <Span>(18-64 years old)</Span>
       </RoomDetails>
