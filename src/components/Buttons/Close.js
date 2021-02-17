@@ -27,7 +27,7 @@ const LineX = styled.div`
   top: 1px;
   width: 17px;
   height: 2px;
-  background-color: #ff6866;
+  background-color: var(--red);
   transform: rotate(45deg);
 `;
 
@@ -37,7 +37,7 @@ const LineY = styled.div`
   bottom: 1px;
   width: 17px;
   height: 2px;
-  background-color: #ff6866;
+  background-color: var(--red);
   transform: rotate(-45deg);
 `;
 

@@ -23,7 +23,7 @@ const Button = styled.button`
 `;
 
 const Children = styled.p`
-  color: #1ba7e0;
+  color: var(--blue);
   text-decoration-line: underline;
   font-style: normal;
   font-weight: 700;

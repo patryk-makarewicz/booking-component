@@ -10,7 +10,7 @@ const Button = styled.button`
   align-items: center;
   width: 226px;
   height: 46px;
-  background-color: #ff6866;
+  background-color: var(--red);
   border: 1px solid #dd4747;
   box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.15);
   border-radius: 2px;
@@ -22,7 +22,7 @@ const Button = styled.button`
   }
 
   &:active {
-    background: #ff6866;
+    background: var(--red);
     border: 1px solid #dd4747;
   }
 `;

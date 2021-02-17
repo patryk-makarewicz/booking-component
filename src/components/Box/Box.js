@@ -19,7 +19,7 @@ const Room = styled.p`
   font-weight: 700;
   font-size: 15px;
   line-height: 22px;
-  color: #ff6866;
+  color: var(--red);
   margin-bottom: 16px;
 `;
 
