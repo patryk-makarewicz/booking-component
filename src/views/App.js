@@ -9,6 +9,7 @@ import ButtonArrow from '../components/Buttons/Arrow';
 import ButtonClose from '../components/Buttons/Close';
 import ButtonStop from '../components/Buttons/Stop';
 import Rooms from '../components/Rooms/Rooms';
+import Box from '../components/Rooms/Box';
 
 const App = () => (
   <>
@@ -22,6 +23,7 @@ const App = () => (
       <ButtonStop />
       <ButtonStop secondary />
       <Rooms />
+      <Box />
     </div>
   </>
 );
