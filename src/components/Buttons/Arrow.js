@@ -11,7 +11,6 @@ const Button = styled.button`
   border-radius: 50%;
   background: #ffffff;
   border: 0.5px solid #e6eaed;
-  box-sizing: border-box;
   box-shadow: 0px 1.76139px 4.69705px rgba(0, 0, 0, 0.15);
   cursor: pointer;
 

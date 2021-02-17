@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import BedIcon from '../../assets/bed.svg';
 import PersonIcon from '../../assets/person.svg';
-import DownArrowIcon from '../../assets/arrowUp.svg';
+import ButtonArrowNoBorder from '../Buttons/ArrowNoBorder';
 
 const Wrapper = styled.div`
   display: flex;
@@ -34,11 +34,6 @@ const Icon = styled.img`
   margin-left: 25px;
 `;
 
-const Arrow = styled.img`
-  margin-left: 85px;
-  transform: rotate(180deg);
-`;
-
 const Number = styled.p`
   width: 27px;
   font-style: normal;
@@ -56,7 +51,7 @@ const Rooms = () => (
     <Person>
       <Icon src={PersonIcon} alt="Person icon" />
       <Number>0</Number>
-      <Arrow src={DownArrowIcon} alt="Down arrow icon" />
+      <ButtonArrowNoBorder />
     </Person>
   </Wrapper>
 );
