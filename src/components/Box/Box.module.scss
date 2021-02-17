@@ -1,6 +1,5 @@
 .box {
   width: 303px;
-  height: 315px;
   background: #ffffff;
   box-shadow: 0px 6px 12px rgba(34, 68, 90, 0.25);
   border-radius: 2px;
@@ -28,6 +27,12 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+  }
+
+  &__line {
+    border-top: 1px solid #e6eaed;
+    margin-top: 22px;
+    margin-bottom: 20px;
   }
 
   &__number {

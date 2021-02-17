@@ -41,8 +41,8 @@ const LineY = styled.div`
   transform: rotate(-45deg);
 `;
 
-const ButtonClose = () => (
-  <Button type="button">
+const ButtonClose = ({ onPress }) => (
+  <Button type="button" onClick={onPress}>
     <LineX />
     <LineY />
   </Button>

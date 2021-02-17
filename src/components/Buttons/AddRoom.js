@@ -31,8 +31,8 @@ const Children = styled.p`
   line-height: 22px;
 `;
 
-const ButtonAddRoom = ({ children }) => (
-  <Button type="button">
+const ButtonAddRoom = ({ children, onPress }) => (
+  <Button type="button" onClick={onPress}>
     <Children>{children}</Children>
   </Button>
 );
