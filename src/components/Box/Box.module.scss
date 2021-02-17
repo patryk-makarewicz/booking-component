@@ -1,0 +1,50 @@
+.box {
+  width: 303px;
+  height: 315px;
+  background: #ffffff;
+  box-shadow: 0px 6px 12px rgba(34, 68, 90, 0.25);
+  border-radius: 2px;
+  padding: 25px;
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 125px;
+    height: 33px;
+    margin-bottom: 11px;
+  }
+
+  &__details {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    color: #323232;
+    margin-bottom: 5px;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__number {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 27px;
+    text-align: center;
+    color: #323232;
+  }
+
+  &__room {
+    width: 60px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 22px;
+    color: var(--red);
+    margin-bottom: 16px;
+  }
+}

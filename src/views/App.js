@@ -2,7 +2,6 @@ import React from 'react';
 
 import GlobalStyle from 'theme/GlobalStyle';
 
-import './App.scss';
 import ButtonSubmit from '../components/Buttons/Submit';
 import ButtonReady from '../components/Buttons/Ready';
 import ButtonArrow from '../components/Buttons/Arrow';
@@ -15,7 +14,7 @@ import BoxFailed from '../components/Box/BoxFailed';
 const App = () => (
   <>
     <GlobalStyle />
-    <div className="app">
+    <div>
       <ButtonSubmit>Submit</ButtonSubmit>
       <ButtonSubmit secondary>Submit</ButtonSubmit>
       <ButtonReady>Ready</ButtonReady>
