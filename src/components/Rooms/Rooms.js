@@ -5,7 +5,7 @@ import BedIcon from '../../assets/bed.svg';
 import PersonIcon from '../../assets/person.svg';
 import ButtonArrowNoBorder from '../Buttons/ArrowNoBorder';
 
-const Wrapper = styled.div`
+const Room = styled.div`
   display: flex;
   width: 303px;
   height: 46px;
@@ -15,7 +15,7 @@ const Wrapper = styled.div`
   border-radius: 5px;
 `;
 
-const Bed = styled.div`
+const RoomBed = styled.div`
   display: flex;
   align-items: center;
   width: 96px;
@@ -23,7 +23,7 @@ const Bed = styled.div`
   border-right: 1px solid #e6eaed;
 `;
 
-const Person = styled.div`
+const RoomPerson = styled.div`
   display: flex;
   align-items: center;
   width: 206px;
@@ -43,17 +43,17 @@ const Number = styled.p`
 `;
 
 const Rooms = () => (
-  <Wrapper>
-    <Bed>
+  <Room>
+    <RoomBed>
       <Icon src={BedIcon} alt="Bed icon" />
       <Number>0</Number>
-    </Bed>
-    <Person>
+    </RoomBed>
+    <RoomPerson>
       <Icon src={PersonIcon} alt="Person icon" />
       <Number>0</Number>
       <ButtonArrowNoBorder />
-    </Person>
-  </Wrapper>
+    </RoomPerson>
+  </Room>
 );
 
 export default Rooms;

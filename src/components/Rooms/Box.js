@@ -30,7 +30,16 @@ const Room = styled.p`
   margin-bottom: 16px;
 `;
 
-const Details = styled.p`
+const RoomButtons = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 125px;
+  height: 33px;
+  margin-bottom: 11px;
+`;
+
+const RoomDetails = styled.p`
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
@@ -38,7 +47,7 @@ const Details = styled.p`
   color: #323232;
   margin-bottom: 5px;
 `;
-const DetailsNumber = styled.p`
+const RoomNumber = styled.p`
   font-weight: 700;
   font-size: 18px;
   line-height: 27px;
@@ -50,36 +59,27 @@ const Span = styled.span`
   font-weight: 400;
 `;
 
-const Buttons = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 125px;
-  height: 33px;
-  margin-bottom: 11px;
-`;
-
 const Box = () => (
   <>
     <Tangle src={TangleImage} alt="Tangle" />
     <Wrapper>
       <Room>Room 1</Room>
-      <Details>
+      <RoomDetails>
         Adults <Span>(18-64 years old)</Span>
-      </Details>
-      <Buttons>
+      </RoomDetails>
+      <RoomButtons>
         <ButtonArrow />
-        <DetailsNumber>1</DetailsNumber>
+        <RoomNumber>1</RoomNumber>
         <ButtonArrow secondary />
-      </Buttons>
-      <Details>
+      </RoomButtons>
+      <RoomDetails>
         Children <Span>(2-12 years old)</Span>
-      </Details>
-      <Buttons>
+      </RoomDetails>
+      <RoomButtons>
         <ButtonArrow />
-        <DetailsNumber>1</DetailsNumber>
+        <RoomNumber>1</RoomNumber>
         <ButtonArrow secondary />
-      </Buttons>
+      </RoomButtons>
       <ButtonAddRoom>Add room</ButtonAddRoom>
       <ButtonReady>Ready</ButtonReady>
     </Wrapper>
