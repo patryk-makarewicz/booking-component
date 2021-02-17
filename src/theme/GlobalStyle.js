@@ -21,9 +21,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   :root {
-    --main-blue: #1976d2;
-    --gray: #939597;
-    --gray-dark: #808080;
+    --blue: #1BA7E0;
+    --red: #FF6866;
   }
 `;
 

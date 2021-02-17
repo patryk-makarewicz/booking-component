@@ -9,7 +9,8 @@ import ButtonArrow from '../components/Buttons/Arrow';
 import ButtonClose from '../components/Buttons/Close';
 import ButtonStop from '../components/Buttons/Stop';
 import Rooms from '../components/Rooms/Rooms';
-import Box from '../components/Rooms/Box';
+import Box from '../components/Box/Box';
+import BoxFailed from '../components/Box/BoxFailed';
 
 const App = () => (
   <>
@@ -24,6 +25,7 @@ const App = () => (
       <ButtonStop secondary />
       <Rooms />
       <Box />
+      <BoxFailed />
     </div>
   </>
 );
