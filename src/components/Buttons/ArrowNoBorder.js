@@ -25,8 +25,8 @@ const Arrow = styled.img`
   transform: rotate(180deg);
 `;
 
-const ButtonArrowNoBorder = () => (
-  <Button type="button">
+const ButtonArrowNoBorder = ({ onPress }) => (
+  <Button type="button" onClick={onPress}>
     <Arrow src={DownArrowIcon} alt="Down arrow icon" />
   </Button>
 );

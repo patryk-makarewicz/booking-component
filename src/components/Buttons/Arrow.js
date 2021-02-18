@@ -28,8 +28,8 @@ const Arrow = styled.img`
   height: 10px;
 `;
 
-const ButtonArrow = ({ secondary }) => (
-  <Button type="button">
+const ButtonArrow = ({ secondary, onPress }) => (
+  <Button type="button" onClick={onPress}>
     {secondary === true ? (
       <Arrow src={ArrowUp} alt="Arrow up" />
     ) : (
