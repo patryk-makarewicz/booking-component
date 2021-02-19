@@ -13,6 +13,7 @@ import {
   decChildrenTwo,
   incAdultsTwo,
   incChildrenTwo,
+  resetPersonTwo,
 } from '../../redux/Actions/roomTwo-actions';
 import { toggleAddRoom } from '../../redux/Actions/addRoom-actions';
 
@@ -51,6 +52,7 @@ const Box = (props) => {
     childrenTwoNumber,
     addRoom,
     showNextRoom,
+    removePersonTwo,
   } = props;
 
   return (
@@ -89,7 +91,12 @@ const Box = (props) => {
             <p className={styles.box__line} />
             <header className={styles.box__header}>
               <p className={styles.box__room}>Room 2</p>
-              <ButtonClose onPress={() => addRoom()} />
+              <ButtonClose
+                onPress={() => {
+                  removePersonTwo();
+                  addRoom();
+                }}
+              />
             </header>
             <p className={styles.box__details}>
               Adults <Span>(18-64 years old)</Span>
@@ -142,6 +149,7 @@ const mapDispatchToProps = (dispatch) => ({
   removeAdultsTwo: () => dispatch(decAdultsTwo()),
   addChildrenTwo: () => dispatch(incChildrenTwo()),
   removeChildrenTwo: () => dispatch(decChildrenTwo()),
+  removePersonTwo: () => dispatch(resetPersonTwo()),
   addRoom: () => dispatch(toggleAddRoom()),
 });
 
