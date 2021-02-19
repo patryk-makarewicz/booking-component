@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import styled from 'styled-components';
-import { incAdults } from '../../redux/GuestNumber/actions';
+import { decAdults, decChildren, incAdults, incChildren } from '../../redux/GuestNumber/actions';
 
 import styles from './Box.module.scss';
 
@@ -24,7 +24,14 @@ const Span = styled.span`
 `;
 
 const Box = (props) => {
-  const { addAdults, adultsNumber } = props;
+  const {
+    addAdults,
+    removeAdults,
+    adultsNumber,
+    addChildren,
+    removeChildren,
+    childrenNumber,
+  } = props;
 
   return (
     <>
@@ -38,7 +45,7 @@ const Box = (props) => {
           Adults <Span>(18-64 years old)</Span>
         </p>
         <div className={styles.box__buttons}>
-          {adultsNumber === 0 ? <ButtonStop /> : <ButtonArrow />}
+          {adultsNumber === 0 ? <ButtonStop /> : <ButtonArrow onPress={() => removeAdults()} />}
           <p className={styles.box__number}>{adultsNumber}</p>
           {adultsNumber === 4 ? (
             <ButtonStop secondary />
@@ -50,11 +57,13 @@ const Box = (props) => {
           Children <Span>(2-12 years old)</Span>
         </p>
         <div className={styles.box__buttons}>
-          <ButtonStop />
-
-          <p className={styles.box__number}>T</p>
-
-          <ButtonArrow secondary />
+          {childrenNumber === 0 ? <ButtonStop /> : <ButtonArrow onPress={() => removeChildren()} />}
+          <p className={styles.box__number}>{childrenNumber}</p>
+          {childrenNumber === 9 ? (
+            <ButtonStop secondary />
+          ) : (
+            <ButtonArrow secondary onPress={() => addChildren()} />
+          )}
         </div>
         {/* {addRoom && (
           <>
@@ -108,10 +117,14 @@ const Box = (props) => {
 
 const mapDispatchToProps = (dispatch) => ({
   addAdults: () => dispatch(incAdults()),
+  removeAdults: () => dispatch(decAdults()),
+  addChildren: () => dispatch(incChildren()),
+  removeChildren: () => dispatch(decChildren()),
 });
 
 const mapStateToProps = (state) => ({
   adultsNumber: state.counterGuest.adults,
+  childrenNumber: state.counterGuest.children,
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Box);

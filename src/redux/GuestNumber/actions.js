@@ -7,8 +7,8 @@ export const decAdults = () => ({
   type: actionTypes.ADULTS_DEC,
 });
 export const incChildren = () => ({
-  type: actionTypes.ADULTS_INC,
+  type: actionTypes.CHILDREN_INC,
 });
 export const decChildren = () => ({
-  type: actionTypes.ADULTS_DEC,
+  type: actionTypes.CHILDREN_DEC,
 });
