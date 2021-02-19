@@ -1,4 +1,4 @@
-import * as actionTypes from '../Types/types';
+import * as actionTypes from '../Types/addRoom-types';
 
 const INITIAL_STATE = {
   showNextRoom: false,

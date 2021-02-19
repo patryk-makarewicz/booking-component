@@ -1,4 +1,4 @@
-import * as actionTypes from '../Types/types';
+import * as actionTypes from '../Types/roomOne-types';
 
 export const incAdults = () => ({
   type: actionTypes.ADULTS_INC,
@@ -11,8 +11,4 @@ export const incChildren = () => ({
 });
 export const decChildren = () => ({
   type: actionTypes.CHILDREN_DEC,
-});
-
-export const toggleAddRoom = () => ({
-  type: actionTypes.ADD_ROOM,
 });

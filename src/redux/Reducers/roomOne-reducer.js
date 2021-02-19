@@ -1,4 +1,4 @@
-import * as actionTypes from '../Types/types';
+import * as actionTypes from '../Types/roomOne-types';
 
 const INITIAL_STATE = {
   adults: 0,

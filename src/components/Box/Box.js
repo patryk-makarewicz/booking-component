@@ -7,8 +7,14 @@ import {
   decChildren,
   incAdults,
   incChildren,
-  toggleAddRoom,
-} from '../../redux/Actions/actions';
+} from '../../redux/Actions/roomOne-actions';
+import {
+  decAdultsTwo,
+  decChildrenTwo,
+  incAdultsTwo,
+  incChildrenTwo,
+} from '../../redux/Actions/roomTwo-actions';
+import { toggleAddRoom } from '../../redux/Actions/addRoom-actions';
 
 import styles from './Box.module.scss';
 
@@ -33,10 +39,16 @@ const Box = (props) => {
   const {
     addAdults,
     removeAdults,
+    addAdultsTwo,
+    removeAdultsTwo,
     adultsNumber,
+    adultsTwoNumber,
     addChildren,
     removeChildren,
+    addChildrenTwo,
+    removeChildrenTwo,
     childrenNumber,
+    childrenTwoNumber,
     addRoom,
     showNextRoom,
   } = props;
@@ -83,28 +95,32 @@ const Box = (props) => {
               Adults <Span>(18-64 years old)</Span>
             </p>
             <div className={styles.box__buttons}>
-              {adultsNumber === 0 ? <ButtonStop /> : <ButtonArrow onPress={() => removeAdults()} />}
-              <p className={styles.box__number}>{adultsNumber}</p>
-              {adultsNumber === 4 ? (
+              {adultsTwoNumber === 0 ? (
+                <ButtonStop />
+              ) : (
+                <ButtonArrow onPress={() => removeAdultsTwo()} />
+              )}
+              <p className={styles.box__number}>{adultsTwoNumber}</p>
+              {adultsTwoNumber === 4 ? (
                 <ButtonStop secondary />
               ) : (
-                <ButtonArrow secondary onPress={() => addAdults()} />
+                <ButtonArrow secondary onPress={() => addAdultsTwo()} />
               )}
             </div>
             <p className={styles.box__details}>
               Children <Span>(2-12 years old)</Span>
             </p>
             <div className={styles.box__buttons}>
-              {childrenNumber === 0 ? (
+              {childrenTwoNumber === 0 ? (
                 <ButtonStop />
               ) : (
-                <ButtonArrow onPress={() => removeChildren()} />
+                <ButtonArrow onPress={() => removeChildrenTwo()} />
               )}
-              <p className={styles.box__number}>{childrenNumber}</p>
-              {childrenNumber === 9 ? (
+              <p className={styles.box__number}>{childrenTwoNumber}</p>
+              {childrenTwoNumber === 9 ? (
                 <ButtonStop secondary />
               ) : (
-                <ButtonArrow secondary onPress={() => addChildren()} />
+                <ButtonArrow secondary onPress={() => addChildrenTwo()} />
               )}
             </div>
             <p className={styles.box__line} />
@@ -122,12 +138,18 @@ const mapDispatchToProps = (dispatch) => ({
   removeAdults: () => dispatch(decAdults()),
   addChildren: () => dispatch(incChildren()),
   removeChildren: () => dispatch(decChildren()),
+  addAdultsTwo: () => dispatch(incAdultsTwo()),
+  removeAdultsTwo: () => dispatch(decAdultsTwo()),
+  addChildrenTwo: () => dispatch(incChildrenTwo()),
+  removeChildrenTwo: () => dispatch(decChildrenTwo()),
   addRoom: () => dispatch(toggleAddRoom()),
 });
 
 const mapStateToProps = (state) => ({
   adultsNumber: state.roomOne.adults,
   childrenNumber: state.roomOne.children,
+  adultsTwoNumber: state.roomTwo.adultsTwo,
+  childrenTwoNumber: state.roomTwo.childrenTwo,
   showNextRoom: state.nextRoom.showNextRoom,
 });
 

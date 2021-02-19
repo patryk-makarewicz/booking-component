@@ -1,4 +1,4 @@
-import * as actionTypes from '../Types/types';
+import * as actionTypes from '../Types/roomTwo-types';
 
 const INITIAL_STATE = {
   adultsTwo: 0,
@@ -7,13 +7,13 @@ const INITIAL_STATE = {
 
 const roomTwoGuestReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case actionTypes.ADULTS_INC:
+    case actionTypes.ADULTS_TWO_INC:
       return { ...state, adultsTwo: state.adultsTwo + 1 };
-    case actionTypes.ADULTS_DEC:
+    case actionTypes.ADULTS_TWO_DEC:
       return { ...state, adultsTwo: state.adultsTwo - 1 };
-    case actionTypes.CHILDREN_INC:
+    case actionTypes.CHILDREN_TWO_INC:
       return { ...state, childrenTwo: state.childrenTwo + 1 };
-    case actionTypes.CHILDREN_DEC:
+    case actionTypes.CHILDREN_TWO_DEC:
       return { ...state, childrenTwo: state.childrenTwo - 1 };
     default:
       return state;
