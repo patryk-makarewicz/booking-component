@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import styled from 'styled-components';
-import { incRoom } from '../../redux/Counter/actions';
+import { incAdults } from '../../redux/GuestNumber/actions';
 
 import styles from './Box.module.scss';
 
@@ -10,7 +10,7 @@ import TangleImage from '../../assets/tangle.png';
 import ButtonArrow from '../Buttons/Arrow';
 import ButtonAddRoom from '../Buttons/AddRoom';
 import ButtonReady from '../Buttons/Ready';
-import ButtonClose from '../Buttons/Close';
+// import ButtonClose from '../Buttons/Close';
 import ButtonStop from '../Buttons/Stop';
 
 const Tangle = styled.img`
@@ -24,7 +24,7 @@ const Span = styled.span`
 `;
 
 const Box = (props) => {
-  const { addRoom, roomNumber } = props;
+  const { addAdults, adultsNumber } = props;
 
   return (
     <>
@@ -32,17 +32,19 @@ const Box = (props) => {
       <div className={styles.box}>
         <header className={styles.box__header}>
           <p className={styles.box__room}>Room 1</p>
-          {addRoom && <ButtonClose />}
+          {/* {addRoom && <ButtonClose />} */}
         </header>
         <p className={styles.box__details}>
           Adults <Span>(18-64 years old)</Span>
         </p>
         <div className={styles.box__buttons}>
-          <ButtonArrow />
-
-          <p className={styles.box__number}>{roomNumber}</p>
-
-          <ButtonArrow secondary onPress={() => addRoom()} />
+          {adultsNumber === 0 ? <ButtonStop /> : <ButtonArrow />}
+          <p className={styles.box__number}>{adultsNumber}</p>
+          {adultsNumber === 4 ? (
+            <ButtonStop secondary />
+          ) : (
+            <ButtonArrow secondary onPress={() => addAdults()} />
+          )}
         </div>
         <p className={styles.box__details}>
           Children <Span>(2-12 years old)</Span>
@@ -105,11 +107,11 @@ const Box = (props) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  addRoom: () => dispatch(incRoom()),
+  addAdults: () => dispatch(incAdults()),
 });
 
 const mapStateToProps = (state) => ({
-  roomNumber: state.counter.room,
+  adultsNumber: state.counterGuest.adults,
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Box);
