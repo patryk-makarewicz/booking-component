@@ -2,8 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import styled from 'styled-components';
-import { decAdults, decChildren, incAdults, incChildren } from '../../redux/GuestNumber/actions';
-import { toggleAddRoom } from '../../redux/AddRoom/redux';
+import {
+  decAdults,
+  decChildren,
+  incAdults,
+  incChildren,
+  toggleAddRoom,
+} from '../../redux/Actions/actions';
 
 import styles from './Box.module.scss';
 
@@ -121,8 +126,8 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const mapStateToProps = (state) => ({
-  adultsNumber: state.counterGuest.adults,
-  childrenNumber: state.counterGuest.children,
+  adultsNumber: state.roomOne.adults,
+  childrenNumber: state.roomOne.children,
   showNextRoom: state.nextRoom.showNextRoom,
 });
 

@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
-import counterGuestReducer from './GuestNumber/reducer';
-import nextRoomReducer from './AddRoom/redux';
+import roomOneGuestReducer from './Reducers/roomOne-reducer';
+import nextRoomReducer from './Reducers/addRoom-reducer';
 
 const rootReducer = combineReducers({
-  counterGuest: counterGuestReducer,
+  roomOne: roomOneGuestReducer,
   nextRoom: nextRoomReducer,
 });
 

@@ -1,8 +1,4 @@
-const ADD_ROOM = 'ADD_ROOM';
-
-export const toggleAddRoom = () => ({
-  type: ADD_ROOM,
-});
+import * as actionTypes from '../Types/types';
 
 const INITIAL_STATE = {
   showNextRoom: false,
@@ -10,7 +6,7 @@ const INITIAL_STATE = {
 
 const nextRoomReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case ADD_ROOM:
+    case actionTypes.ADD_ROOM:
       return {
         ...state,
         showNextRoom: !state.showNextRoom,

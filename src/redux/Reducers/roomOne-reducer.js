@@ -1,11 +1,11 @@
-import * as actionTypes from './types';
+import * as actionTypes from '../Types/types';
 
 const INITIAL_STATE = {
   adults: 0,
   children: 0,
 };
 
-const counterGuestReducer = (state = INITIAL_STATE, action) => {
+const roomOneGuestReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case actionTypes.ADULTS_INC:
       return { ...state, adults: state.adults + 1 };
@@ -20,4 +20,4 @@ const counterGuestReducer = (state = INITIAL_STATE, action) => {
   }
 };
 
-export default counterGuestReducer;
+export default roomOneGuestReducer;
