@@ -151,12 +151,12 @@ const Box = (props) => {
 
 const mapDispatchToProps = (dispatch) => ({
   addAdults: () => dispatch(incAdults()),
-  removeAdults: () => dispatch(decAdults()),
   addChildren: () => dispatch(incChildren()),
-  removeChildren: () => dispatch(decChildren()),
   addAdultsTwo: () => dispatch(incAdultsTwo()),
-  removeAdultsTwo: () => dispatch(decAdultsTwo()),
   addChildrenTwo: () => dispatch(incChildrenTwo()),
+  removeAdults: () => dispatch(decAdults()),
+  removeChildren: () => dispatch(decChildren()),
+  removeAdultsTwo: () => dispatch(decAdultsTwo()),
   removeChildrenTwo: () => dispatch(decChildrenTwo()),
   removePerson: () => dispatch(resetPerson()),
   removePersonTwo: () => dispatch(resetPersonTwo()),
