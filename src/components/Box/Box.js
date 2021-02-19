@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import styled from 'styled-components';
 import { decAdults, decChildren, incAdults, incChildren } from '../../redux/GuestNumber/actions';
+import { toggleAddRoom } from '../../redux/AddRoom/redux';
 
 import styles from './Box.module.scss';
 
@@ -10,7 +11,7 @@ import TangleImage from '../../assets/tangle.png';
 import ButtonArrow from '../Buttons/Arrow';
 import ButtonAddRoom from '../Buttons/AddRoom';
 import ButtonReady from '../Buttons/Ready';
-// import ButtonClose from '../Buttons/Close';
+import ButtonClose from '../Buttons/Close';
 import ButtonStop from '../Buttons/Stop';
 
 const Tangle = styled.img`
@@ -31,6 +32,8 @@ const Box = (props) => {
     addChildren,
     removeChildren,
     childrenNumber,
+    addRoom,
+    showNextRoom,
   } = props;
 
   return (
@@ -39,7 +42,6 @@ const Box = (props) => {
       <div className={styles.box}>
         <header className={styles.box__header}>
           <p className={styles.box__room}>Room 1</p>
-          {/* {addRoom && <ButtonClose />} */}
         </header>
         <p className={styles.box__details}>
           Adults <Span>(18-64 years old)</Span>
@@ -65,50 +67,33 @@ const Box = (props) => {
             <ButtonArrow secondary onPress={() => addChildren()} />
           )}
         </div>
-        {/* {addRoom && (
+        {showNextRoom && (
           <>
             <p className={styles.box__line} />
             <header className={styles.box__header}>
               <p className={styles.box__room}>Room 2</p>
-              <ButtonClose onPress={handleAddRoom} />
+              <ButtonClose />
             </header>
             <p className={styles.box__details}>
               Adults <Span>(18-64 years old)</Span>
             </p>
             <div className={styles.box__buttons}>
-              {adultsNumber === 0 ? (
-                <ButtonStop />
-              ) : (
-                <ButtonArrow  />
-              )}
+              {adultsNumber === 0 ? <ButtonStop /> : <ButtonArrow />}
               <p className={styles.box__number}>{adultsNumber}</p>
-              {adultsNumber === 4 ? (
-                <ButtonStop secondary />
-              ) : (
-                <ButtonArrow secondary  />
-              )}
+              {adultsNumber === 4 ? <ButtonStop secondary /> : <ButtonArrow secondary />}
             </div>
             <p className={styles.box__details}>
               Children <Span>(2-12 years old)</Span>
             </p>
             <div className={styles.box__buttons}>
-              {childrenNumber === 0 ? (
-                <ButtonStop />
-              ) : (
-                <ButtonArrow  />
-              )}
+              {childrenNumber === 0 ? <ButtonStop /> : <ButtonArrow />}
               <p className={styles.box__number}>{childrenNumber}</p>
-              {childrenNumber === 9 ? (
-                <ButtonStop secondary />
-              ) : (
-                <ButtonArrow secondary  />
-              )}
+              {childrenNumber === 9 ? <ButtonStop secondary /> : <ButtonArrow secondary />}
             </div>
             <p className={styles.box__line} />
           </>
-        )} */}
-        {/* {!addRoom && <ButtonAddRoom >Add room</ButtonAddRoom>} */}
-        <ButtonAddRoom>Add room</ButtonAddRoom>
+        )}
+        {!showNextRoom && <ButtonAddRoom onPress={() => addRoom()}>Add room</ButtonAddRoom>}
         <ButtonReady>Ready</ButtonReady>
       </div>
     </>
@@ -120,11 +105,13 @@ const mapDispatchToProps = (dispatch) => ({
   removeAdults: () => dispatch(decAdults()),
   addChildren: () => dispatch(incChildren()),
   removeChildren: () => dispatch(decChildren()),
+  addRoom: () => dispatch(toggleAddRoom()),
 });
 
 const mapStateToProps = (state) => ({
   adultsNumber: state.counterGuest.adults,
   childrenNumber: state.counterGuest.children,
+  showNextRoom: state.nextRoom.showNextRoom,
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Box);
