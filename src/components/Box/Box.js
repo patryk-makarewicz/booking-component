@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
 
 import styled from 'styled-components';
+import { incRoom } from '../../redux/Counter/actions';
+
 import styles from './Box.module.scss';
 
 import TangleImage from '../../assets/tangle.png';
@@ -20,28 +23,8 @@ const Span = styled.span`
   font-weight: 400;
 `;
 
-const Box = () => {
-  const [addRoom, setAddRoom] = useState(false);
-  const [adultsNumber, setAdultsNumber] = useState(0);
-  const [childrenNumber, setChildrenNumber] = useState(0);
-
-  const handleAddRoom = () => {
-    setAddRoom(!addRoom);
-  };
-
-  const handleIncrementAdultsNumber = () => {
-    setAdultsNumber(adultsNumber + 1);
-  };
-  const handleDecrementAdultsNumber = () => {
-    setAdultsNumber(adultsNumber - 1);
-  };
-
-  const handleIncrementChildrenNumber = () => {
-    setChildrenNumber(childrenNumber + 1);
-  };
-  const handleDecrementChildrenNumber = () => {
-    setChildrenNumber(childrenNumber - 1);
-  };
+const Box = (props) => {
+  const { addRoom, roomNumber } = props;
 
   return (
     <>
@@ -55,35 +38,23 @@ const Box = () => {
           Adults <Span>(18-64 years old)</Span>
         </p>
         <div className={styles.box__buttons}>
-          {adultsNumber === 0 ? (
-            <ButtonStop />
-          ) : (
-            <ButtonArrow onPress={handleDecrementAdultsNumber} />
-          )}
-          <p className={styles.box__number}>{adultsNumber}</p>
-          {adultsNumber === 4 ? (
-            <ButtonStop secondary />
-          ) : (
-            <ButtonArrow secondary onPress={handleIncrementAdultsNumber} />
-          )}
+          <ButtonArrow />
+
+          <p className={styles.box__number}>{roomNumber}</p>
+
+          <ButtonArrow secondary onPress={() => addRoom()} />
         </div>
         <p className={styles.box__details}>
           Children <Span>(2-12 years old)</Span>
         </p>
         <div className={styles.box__buttons}>
-          {childrenNumber === 0 ? (
-            <ButtonStop />
-          ) : (
-            <ButtonArrow onPress={handleDecrementChildrenNumber} />
-          )}
-          <p className={styles.box__number}>{childrenNumber}</p>
-          {childrenNumber === 9 ? (
-            <ButtonStop secondary />
-          ) : (
-            <ButtonArrow secondary onPress={handleIncrementChildrenNumber} />
-          )}
+          <ButtonStop />
+
+          <p className={styles.box__number}>T</p>
+
+          <ButtonArrow secondary />
         </div>
-        {addRoom && (
+        {/* {addRoom && (
           <>
             <p className={styles.box__line} />
             <header className={styles.box__header}>
@@ -97,13 +68,13 @@ const Box = () => {
               {adultsNumber === 0 ? (
                 <ButtonStop />
               ) : (
-                <ButtonArrow onPress={handleDecrementAdultsNumber} />
+                <ButtonArrow  />
               )}
               <p className={styles.box__number}>{adultsNumber}</p>
               {adultsNumber === 4 ? (
                 <ButtonStop secondary />
               ) : (
-                <ButtonArrow secondary onPress={handleIncrementAdultsNumber} />
+                <ButtonArrow secondary  />
               )}
             </div>
             <p className={styles.box__details}>
@@ -113,24 +84,32 @@ const Box = () => {
               {childrenNumber === 0 ? (
                 <ButtonStop />
               ) : (
-                <ButtonArrow onPress={handleDecrementChildrenNumber} />
+                <ButtonArrow  />
               )}
               <p className={styles.box__number}>{childrenNumber}</p>
               {childrenNumber === 9 ? (
                 <ButtonStop secondary />
               ) : (
-                <ButtonArrow secondary onPress={handleIncrementChildrenNumber} />
+                <ButtonArrow secondary  />
               )}
             </div>
             <p className={styles.box__line} />
           </>
-        )}
-        {!addRoom && <ButtonAddRoom onPress={handleAddRoom}>Add room</ButtonAddRoom>}
-
+        )} */}
+        {/* {!addRoom && <ButtonAddRoom >Add room</ButtonAddRoom>} */}
+        <ButtonAddRoom>Add room</ButtonAddRoom>
         <ButtonReady>Ready</ButtonReady>
       </div>
     </>
   );
 };
 
-export default Box;
+const mapDispatchToProps = (dispatch) => ({
+  addRoom: () => dispatch(incRoom()),
+});
+
+const mapStateToProps = (state) => ({
+  roomNumber: state.counter.room,
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Box);

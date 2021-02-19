@@ -1,6 +1,7 @@
 import React from 'react';
-
+import { Provider } from 'react-redux';
 import GlobalStyle from 'theme/GlobalStyle';
+import store from '../redux/store';
 
 import ButtonSubmit from '../components/Buttons/Submit';
 import ButtonReady from '../components/Buttons/Ready';
@@ -12,7 +13,7 @@ import Box from '../components/Box/Box';
 import BoxFailed from '../components/Box/BoxFailed';
 
 const App = () => (
-  <>
+  <Provider store={store}>
     <GlobalStyle />
     <div>
       <ButtonSubmit>Submit</ButtonSubmit>
@@ -27,7 +28,7 @@ const App = () => (
       <Box />
       <BoxFailed />
     </div>
-  </>
+  </Provider>
 );
 
 export default App;

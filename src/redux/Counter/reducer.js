@@ -1,4 +1,4 @@
-import * as actionTypes from './actions';
+import * as actionTypes from './types';
 
 const INITIAL_STATE = {
   room: 0,
