@@ -72,23 +72,35 @@ const Box = (props) => {
             <p className={styles.box__line} />
             <header className={styles.box__header}>
               <p className={styles.box__room}>Room 2</p>
-              <ButtonClose />
+              <ButtonClose onPress={() => addRoom()} />
             </header>
             <p className={styles.box__details}>
               Adults <Span>(18-64 years old)</Span>
             </p>
             <div className={styles.box__buttons}>
-              {adultsNumber === 0 ? <ButtonStop /> : <ButtonArrow />}
+              {adultsNumber === 0 ? <ButtonStop /> : <ButtonArrow onPress={() => removeAdults()} />}
               <p className={styles.box__number}>{adultsNumber}</p>
-              {adultsNumber === 4 ? <ButtonStop secondary /> : <ButtonArrow secondary />}
+              {adultsNumber === 4 ? (
+                <ButtonStop secondary />
+              ) : (
+                <ButtonArrow secondary onPress={() => addAdults()} />
+              )}
             </div>
             <p className={styles.box__details}>
               Children <Span>(2-12 years old)</Span>
             </p>
             <div className={styles.box__buttons}>
-              {childrenNumber === 0 ? <ButtonStop /> : <ButtonArrow />}
+              {childrenNumber === 0 ? (
+                <ButtonStop />
+              ) : (
+                <ButtonArrow onPress={() => removeChildren()} />
+              )}
               <p className={styles.box__number}>{childrenNumber}</p>
-              {childrenNumber === 9 ? <ButtonStop secondary /> : <ButtonArrow secondary />}
+              {childrenNumber === 9 ? (
+                <ButtonStop secondary />
+              ) : (
+                <ButtonArrow secondary onPress={() => addChildren()} />
+              )}
             </div>
             <p className={styles.box__line} />
           </>
