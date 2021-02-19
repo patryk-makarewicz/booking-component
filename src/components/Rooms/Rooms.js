@@ -22,7 +22,7 @@ const Rooms = (props) => {
         <div className={styles.room__person}>
           <img className={styles.room__icon} src={PersonIcon} alt="Person icon" />
           <p className={styles.room__number}>0</p>
-          <ButtonArrowNoBorder onPress={() => openBox()} />
+          <ButtonArrowNoBorder onPress={() => openBox()} showBox={showBox} />
         </div>
       </div>
       {showBox && <Box />}

@@ -21,13 +21,21 @@ const Button = styled.button`
   }
 `;
 
-const Arrow = styled.img`
+const ArrowOpen = styled.img`
   transform: rotate(180deg);
 `;
 
-const ButtonArrowNoBorder = ({ onPress }) => (
+const ArrowClose = styled.img`
+  transform: rotate(0deg);
+`;
+
+const ButtonArrowNoBorder = ({ onPress, showBox }) => (
   <Button type="button" onClick={onPress}>
-    <Arrow src={DownArrowIcon} alt="Down arrow icon" />
+    {showBox === true ? (
+      <ArrowClose src={DownArrowIcon} alt="Down arrow icon" />
+    ) : (
+      <ArrowOpen src={DownArrowIcon} alt="Down arrow icon" />
+    )}
   </Button>
 );
 
