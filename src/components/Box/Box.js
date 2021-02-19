@@ -16,7 +16,7 @@ import {
   incChildrenTwo,
   resetPersonTwo,
 } from '../../redux/Actions/roomTwo-actions';
-import { toggleAddRoom } from '../../redux/Actions/ui-actions';
+import { toggleAddRoom, toggleShowBox } from '../../redux/Actions/ui-actions';
 
 import styles from './Box.module.scss';
 
@@ -52,6 +52,7 @@ const Box = (props) => {
     childrenNumber,
     childrenTwoNumber,
     addRoom,
+    addRoomOne,
     showNextRoom,
     removePerson,
     removePersonTwo,
@@ -67,6 +68,7 @@ const Box = (props) => {
             <ButtonClose
               onPress={() => {
                 removePerson();
+                addRoomOne();
               }}
             />
           )}
@@ -161,6 +163,7 @@ const mapDispatchToProps = (dispatch) => ({
   removePerson: () => dispatch(resetPerson()),
   removePersonTwo: () => dispatch(resetPersonTwo()),
   addRoom: () => dispatch(toggleAddRoom()),
+  addRoomOne: () => dispatch(toggleShowBox()),
 });
 
 const mapStateToProps = (state) => ({
@@ -168,6 +171,7 @@ const mapStateToProps = (state) => ({
   childrenNumber: state.roomOne.children,
   adultsTwoNumber: state.roomTwo.adultsTwo,
   childrenTwoNumber: state.roomTwo.childrenTwo,
+  showBox: state.UI.showBox,
   showNextRoom: state.UI.showNextRoom,
 });
 
