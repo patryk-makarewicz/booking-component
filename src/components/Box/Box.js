@@ -7,6 +7,7 @@ import {
   decChildren,
   incAdults,
   incChildren,
+  resetPerson,
 } from '../../redux/Actions/roomOne-actions';
 import {
   decAdultsTwo,
@@ -52,6 +53,7 @@ const Box = (props) => {
     childrenTwoNumber,
     addRoom,
     showNextRoom,
+    removePerson,
     removePersonTwo,
   } = props;
 
@@ -61,6 +63,13 @@ const Box = (props) => {
       <div className={styles.box}>
         <header className={styles.box__header}>
           <p className={styles.box__room}>Room 1</p>
+          {!showNextRoom && (
+            <ButtonClose
+              onPress={() => {
+                removePerson();
+              }}
+            />
+          )}
         </header>
         <p className={styles.box__details}>
           Adults <Span>(18-64 years old)</Span>
@@ -149,6 +158,7 @@ const mapDispatchToProps = (dispatch) => ({
   removeAdultsTwo: () => dispatch(decAdultsTwo()),
   addChildrenTwo: () => dispatch(incChildrenTwo()),
   removeChildrenTwo: () => dispatch(decChildrenTwo()),
+  removePerson: () => dispatch(resetPerson()),
   removePersonTwo: () => dispatch(resetPersonTwo()),
   addRoom: () => dispatch(toggleAddRoom()),
 });

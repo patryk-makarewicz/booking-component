@@ -12,3 +12,6 @@ export const incChildren = () => ({
 export const decChildren = () => ({
   type: actionTypes.CHILDREN_DEC,
 });
+export const resetPerson = () => ({
+  type: actionTypes.RESET_PERSON,
+});

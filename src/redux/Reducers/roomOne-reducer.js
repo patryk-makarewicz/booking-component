@@ -15,6 +15,8 @@ const roomOneGuestReducer = (state = INITIAL_STATE, action) => {
       return { ...state, children: state.children + 1 };
     case actionTypes.CHILDREN_DEC:
       return { ...state, children: state.children - 1 };
+    case actionTypes.RESET_PERSON:
+      return { ...state, adults: 0, children: 0 };
     default:
       return state;
   }
