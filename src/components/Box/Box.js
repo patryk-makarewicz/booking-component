@@ -16,7 +16,7 @@ import {
   incChildrenTwo,
   resetPersonTwo,
 } from '../../redux/Actions/roomTwo-actions';
-import { toggleAddRoom } from '../../redux/Actions/addRoom-actions';
+import { toggleAddRoom } from '../../redux/Actions/ui-actions';
 
 import styles from './Box.module.scss';
 
@@ -168,7 +168,7 @@ const mapStateToProps = (state) => ({
   childrenNumber: state.roomOne.children,
   adultsTwoNumber: state.roomTwo.adultsTwo,
   childrenTwoNumber: state.roomTwo.childrenTwo,
-  showNextRoom: state.nextRoom.showNextRoom,
+  showNextRoom: state.UI.showNextRoom,
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Box);
