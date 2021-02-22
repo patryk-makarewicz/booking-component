@@ -2,7 +2,19 @@
 
 # General info
 
-IN CONSTRUCTION - This will be quick booking a hotel stay app.
+This is a simple element for searching rooms. There is no API at the moment.
+<br />
+
+## What's inside?
+
+✔ React<br />
+✔ React Hook Form<br />
+✔ Redux<br />
+✔ JavaScript ES6<br />
+✔ HTML5<br />
+✔ CSS3<br />
+✔ SCSS & BEM<br />
+✔ Styled-Components<br />
 
 ## Getting Started with Create React App
 
