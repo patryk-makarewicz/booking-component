@@ -30,7 +30,7 @@ import ButtonStop from '../Buttons/Stop';
 const Tangle = styled.img`
   position: relative;
   left: 230px;
-  top: 4px;
+  top: 6px;
 `;
 
 const Span = styled.span`
