@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { connect } from 'react-redux';
 
+import { toggleShowBox } from 'redux/Actions/ui-actions';
 import { resetPerson } from '../../redux/Actions/roomOne-actions';
 import { resetPersonTwo } from '../../redux/Actions/roomTwo-actions';
 
@@ -15,6 +16,7 @@ const Form = (props) => {
     childrenTwoNumber,
     removePerson,
     removePersonTwo,
+    openBox,
   } = props;
 
   const [submitted, setSubmitted] = useState(false);
@@ -39,6 +41,7 @@ const Form = (props) => {
     removePerson();
     removePersonTwo();
     setSubmitted(true);
+    openBox();
     setTimeout(() => {
       setSubmitted(false);
     }, 2000);
@@ -59,6 +62,7 @@ const Form = (props) => {
 const mapDispatchToProps = (dispatch) => ({
   removePerson: () => dispatch(resetPerson()),
   removePersonTwo: () => dispatch(resetPersonTwo()),
+  openBox: () => dispatch(toggleShowBox()),
 });
 
 const mapStateToProps = (state) => ({
