@@ -17,7 +17,7 @@ const Wrapper = styled.div`
 const Tangle = styled.img`
   position: relative;
   left: 230px;
-  top: 6px;
+  top: 7px;
 `;
 
 const Warning = styled.p`
