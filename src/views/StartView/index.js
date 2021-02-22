@@ -7,14 +7,34 @@ import Form from '../../components/Form/index';
 
 const Wrapper = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   margin-top: 100px;
+
+  @media screen and (min-width: 580px) {
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top: 100px;
+  }
+`;
+
+const MarginButton = styled.div`
+  margin-top: 25px;
+  margin-left: 0;
+
+  @media screen and (min-width: 580px) {
+    margin-top: 0;
+    margin-left: 25px;
+  }
 `;
 
 const StartView = () => (
   <Wrapper>
     <Rooms />
-    <Form />
+    <MarginButton>
+      <Form />
+    </MarginButton>
   </Wrapper>
 );
 

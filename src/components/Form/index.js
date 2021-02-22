@@ -24,7 +24,7 @@ const Form = (props) => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
-    const url = 'https://api.bergregions.pl/api/v1/test/rooms';
+    const url = '';
 
     fetch(url, {
       method: 'POST',
@@ -37,7 +37,6 @@ const Form = (props) => {
       result.json();
     });
 
-    console.log(data);
     removePerson();
     removePersonTwo();
     setSubmitted(true);
