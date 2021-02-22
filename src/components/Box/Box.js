@@ -56,6 +56,7 @@ const Box = (props) => {
     showNextRoom,
     removePerson,
     removePersonTwo,
+    openBox,
   } = props;
 
   return (
@@ -145,7 +146,7 @@ const Box = (props) => {
           </>
         )}
         {!showNextRoom && <ButtonAddRoom onPress={() => addRoom()}>Add room</ButtonAddRoom>}
-        <ButtonReady>Ready</ButtonReady>
+        <ButtonReady onPress={() => openBox()}>Ready</ButtonReady>
       </div>
     </>
   );
@@ -164,6 +165,7 @@ const mapDispatchToProps = (dispatch) => ({
   removePersonTwo: () => dispatch(resetPersonTwo()),
   addRoom: () => dispatch(toggleAddRoom()),
   addRoomOne: () => dispatch(toggleShowBox()),
+  openBox: () => dispatch(toggleShowBox()),
 });
 
 const mapStateToProps = (state) => ({

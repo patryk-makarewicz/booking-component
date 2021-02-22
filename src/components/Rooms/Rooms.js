@@ -8,6 +8,7 @@ import BedIcon from '../../assets/bed.svg';
 import PersonIcon from '../../assets/person.svg';
 import ButtonArrowNoBorder from '../Buttons/ArrowNoBorder';
 import Box from '../Box/Box';
+import BoxFailed from '../Box/BoxFailed';
 
 const Rooms = (props) => {
   const {
@@ -21,8 +22,11 @@ const Rooms = (props) => {
 
   const sum = adultsNumber + childrenNumber + adultsTwoNumber + childrenTwoNumber;
 
+  const validationRoomOne = adultsNumber === 0 && childrenNumber >= 1;
+  const validationRoomTwo = adultsTwoNumber === 0 && childrenTwoNumber >= 1;
+
   return (
-    <>
+    <div className={styles.wrapper}>
       <div className={styles.room}>
         <div className={styles.room__bed}>
           <img className={styles.room__icon} src={BedIcon} alt="Bed icon" />
@@ -38,8 +42,10 @@ const Rooms = (props) => {
           <ButtonArrowNoBorder onPress={() => openBox()} showBox={showBox} />
         </div>
       </div>
+      {validationRoomOne === true ? <BoxFailed /> : null}
+      {validationRoomTwo === true ? <BoxFailed /> : null}
       {showBox && <Box />}
-    </>
+    </div>
   );
 };
 
