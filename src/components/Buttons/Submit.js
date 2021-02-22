@@ -45,9 +45,9 @@ const Children = styled.p`
   line-height: 21px;
 `;
 
-const ButtonSubmit = ({ children, secondary, onPress }) => (
+const ButtonSubmit = ({ children, onPress, submitted }) => (
   <Button type="submit" onClick={onPress}>
-    {secondary === true ? <Icon src={OkImage} alt="Ok" /> : <Icon src={LoupeImage} alt="Loupe" />}
+    {submitted === true ? <Icon src={OkImage} alt="Ok" /> : <Icon src={LoupeImage} alt="Loupe" />}
 
     <Children>{children}</Children>
   </Button>
