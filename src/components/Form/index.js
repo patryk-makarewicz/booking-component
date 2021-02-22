@@ -24,18 +24,20 @@ const Form = (props) => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
-    const url = '';
+    // const url = '';
 
-    fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-      body: JSON.stringify(data),
-    }).then((result) => {
-      result.json();
-    });
+    // fetch(url, {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //     Accept: 'application/json',
+    //   },
+    //   body: JSON.stringify(data),
+    // }).then((result) => {
+    //   result.json();
+    // });
+
+    console.log(data);
 
     removePerson();
     removePersonTwo();
